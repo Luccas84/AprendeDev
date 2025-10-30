@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introdução ao CSS | AprendeDev</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #f5f7fa;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        background-color: #4a6fa5;
+        color: white;
+        padding: 20px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin-left: 20px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      main {
+        padding: 40px 0;
+        background-color: white;
+      }
+
+      h1 {
+        color: #2c3e50;
+        margin-bottom: 30px;
+        text-align: center;
+      }
+
+      h2 {
+        color: #4a6fa5;
+        margin: 30px 0 15px;
+      }
+
+      h3 {
+        color: #3a5a80;
+        margin: 20px 0 10px;
+      }
+
+      p {
+        margin-bottom: 15px;
+      }
+
+      .concept-box {
+        background-color: #e8f1f8;
+        border-left: 4px solid #4a6fa5;
+        padding: 15px;
+        margin: 20px 0;
+        border-radius: 0 4px 4px 0;
+      }
+
+      .highlight {
+        font-weight: bold;
+        color: #2c3e50;
+      }
+
+      .example {
+        font-style: italic;
+        background-color: #f8f9fa;
+        padding: 10px;
+        border-radius: 4px;
+        margin: 10px 0;
+        border-left: 3px solid #4a6fa5;
+      }
+
+      .code-block {
+        font-family: "Courier New", Courier, monospace;
+        background-color: #2c3e50;
+        color: #f5f7fa;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 15px 0;
+        overflow-x: auto;
+      }
+
+      .visual-example {
+        border: 1px solid #ddd;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 5px;
+      }
+
+      .css-syntax {
+        background-color: #f0f7ff;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 15px 0;
+        border-left: 4px solid #4a6fa5;
+      }
+
+      .try-it {
+        background-color: #e7f5ee;
+        border-left: 4px solid #2e8b57;
+        padding: 15px;
+        margin: 20px 0;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-top: 30px;
+        color: #4a6fa5;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      footer {
+        background-color: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      /* Exemplos de CSS para demonstração */
+      .demo-box {
+        background-color: #e83e8c;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        margin: 15px 0;
+        border-radius: 5px;
+      }
+
+      .demo-text {
+        font-family: "Arial", sans-serif;
+        color: #2e8b57;
+        font-size: 18px;
+      }
+
+      @media (max-width: 768px) {
+        .header-content {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        nav ul {
+          margin-top: 15px;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container header-content">
+        <div class="logo">AprendeDev</div>
+        <nav>
+          <ul>
+            <li><a href="../Site Projeto/Home.html">Início</a></li>
+            <li><a href="../Site Projeto/Home.html#conteudos">Conteúdos</a></li>
+            <li><a href="../Site Projeto/Home.html#comunidade">Comunidade</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h1>Introdução ao CSS</h1>
+
+      <p>
+        Se HTML é o esqueleto de uma página web, o CSS é a roupa que deixa essa
+        página bonita e estilosa! Vamos aprender como transformar páginas
+        simples em trabalhos visuais atraentes.
+      </p>
+
+      <div class="concept-box">
+        <h3>CSS em 10 segundos:</h3>
+        <p>
+          CSS (Cascading Style Sheets) é uma linguagem que controla a aparência
+          do conteúdo HTML. Enquanto o HTML estrutura, o CSS estiliza.
+        </p>
+      </div>
+
+      <h2>O que significa CSS?</h2>
+      <p>
+        <span class="highlight">Cascading Style Sheets</span> (Folhas de Estilo
+        em Cascata). O "cascata" refere-se à forma como os estilos são aplicados
+        - como uma cascata de regras que fluem de cima para baixo.
+      </p>
+
+      <h2>Como o CSS funciona?</h2>
+      <p>
+        O CSS usa um sistema de regras para aplicar estilos aos elementos HTML.
+        Cada regra consiste em:
+      </p>
+
+      <div class="css-syntax">
+        <p>
+          <strong>seletor</strong> { <strong>propriedade</strong>:
+          <strong>valor</strong>; }
+        </p>
+      </div>
+
+      <div class="code-block">
+        /* Exemplo: */<br />
+        h1 {<br />
+        &nbsp;&nbsp;color: blue;<br />
+        &nbsp;&nbsp;font-size: 24px;<br />
+        }
+      </div>
+
+      <h3>Explicando:</h3>
+      <ul>
+        <li>
+          <strong>Seletor</strong>: Indica qual elemento HTML será estilizado
+          (h1, p, .classe, #id)
+        </li>
+        <li>
+          <strong>Propriedade</strong>: O que você quer mudar (cor, tamanho,
+          margem, etc.)
+        </li>
+        <li>
+          <strong>Valor</strong>: Como você quer que fique (azul, 20px, etc.)
+        </li>
+      </ul>
+
+      <h2>3 Formas de Adicionar CSS</h2>
+
+      <h3>1. CSS Inline (no próprio elemento)</h3>
+      <div class="code-block">
+        &lt;h1 style="color: red; font-size: 30px;"&gt;Título&lt;/h1&gt;
+      </div>
+
+      <h3>2. CSS Interno (na seção &lt;head&gt;)</h3>
+      <div class="code-block">
+        &lt;style&gt;<br />
+        &nbsp;&nbsp;p {<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;color: green;<br />
+        &nbsp;&nbsp;}<br />
+        &lt;/style&gt;
+      </div>
+
+      <h3>3. CSS Externo (arquivo .css separado)</h3>
+      <div class="code-block">
+        &lt;link rel="stylesheet" href="estilos.css"&gt;
+      </div>
+
+      <div class="note">
+        <h3>Melhor prática:</h3>
+        <p>
+          Use CSS externo sempre que possível. Mantém seu código organizado e
+          permite reutilizar estilos em várias páginas.
+        </p>
+      </div>
+
+      <h2>Exemplos Práticos</h2>
+
+      <h3>1. Mudando cor de fundo</h3>
+      <div class="code-block">
+        body {<br />
+        &nbsp;&nbsp;background-color: #f0f0f0;<br />
+        }
+      </div>
+
+      <div class="visual-example" style="background-color: #f0f0f0">
+        <p>Esta caixa tem cor de fundo #f0f0f0</p>
+      </div>
+
+      <h3>2. Alterando fontes</h3>
+      <div class="code-block">
+        p {<br />
+        &nbsp;&nbsp;font-family: Arial, sans-serif;<br />
+        &nbsp;&nbsp;font-size: 16px;<br />
+        &nbsp;&nbsp;color: #333;<br />
+        }
+      </div>
+
+      <div class="visual-example">
+        <p style="font-family: Arial, sans-serif; font-size: 16px; color: #333">
+          Este texto está com fonte Arial, tamanho 16px e cor #333
+        </p>
+      </div>
+
+      <h3>3. Centralizando elementos</h3>
+      <div class="code-block">
+        .centro {<br />
+        &nbsp;&nbsp;text-align: center;<br />
+        &nbsp;&nbsp;margin: 0 auto;<br />
+        &nbsp;&nbsp;width: 50%;<br />
+        }
+      </div>
+
+      <div class="visual-example">
+        <div
+          style="
+            text-align: center;
+            margin: 0 auto;
+            width: 50%;
+            background-color: #4a6fa5;
+            color: white;
+            padding: 10px;
+          "
+        >
+          Este elemento está centralizado
+        </div>
+      </div>
+
+      <div class="try-it">
+        <h3>Experimente!</h3>
+        <p>
+          Crie um arquivo CSS (ex: <span class="highlight">estilos.css</span>) e
+          vincule a uma página HTML:
+        </p>
+
+        <div class="code-block">
+          /* estilos.css */<br />
+          body {<br />
+          &nbsp;&nbsp;font-family: Arial;<br />
+          &nbsp;&nbsp;background-color: #f9f9f9;<br />
+          }<br />
+          <br />
+          h1 {<br />
+          &nbsp;&nbsp;color: #4a6fa5;<br />
+          &nbsp;&nbsp;text-align: center;<br />
+          }<br />
+          <br />
+          .destaque {<br />
+          &nbsp;&nbsp;background-color: yellow;<br />
+          &nbsp;&nbsp;padding: 10px;<br />
+          }
+        </div>
+      </div>
+
+      <h2>Próximos Passos</h2>
+      <p>Agora que você já conhece o básico do CSS, pode:</p>
+      <ol>
+        <li>Praticar modificando páginas existentes</li>
+        <li>Aprender sobre seletores mais avançados</li>
+        <li>Explorar propriedades como margin, padding e display</li>
+        <li>Começar a estudar layouts com Flexbox e Grid</li>
+      </ol>
+
+      <div class="concept-box">
+        <h3>Dica Importante:</h3>
+        <p>
+          Use ferramentas como o Inspetor do navegador (F12) para experimentar
+          com CSS em tempo real em qualquer site!
+        </p>
+      </div>
+
+      <a href="../Site Projeto/Home.html#conteudos" class="back-link"
+        >← Voltar para todos os conteúdos</a
+      >
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>
+          &copy; 2023 AprendeDev - Desenvolvido por Luccas, estudante de Análise
+          e Desenvolvimento de Sistemas / Projeto de Extensão
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

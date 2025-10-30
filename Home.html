@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AprendeDev - Aprenda Programação</title>
+    <style>
+      /* Reset e estilos gerais */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #f5f7fa;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Cabeçalho */
+      header {
+        background-color: #4a6fa5;
+        color: white;
+        padding: 20px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin-left: 20px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #d0e3ff;
+      }
+
+      /* Seções */
+      section {
+        padding: 60px 0;
+      }
+
+      section h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        color: #2c3e50;
+        font-size: 32px;
+      }
+
+      /* Página Inicial */
+      #inicio {
+        text-align: center;
+        background-color: #e8f1f8;
+      }
+
+      #inicio p {
+        max-width: 800px;
+        margin: 0 auto 30px;
+        font-size: 18px;
+      }
+
+      .content-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 40px;
+      }
+
+      .content-link {
+        background-color: #4a6fa5;
+        color: white;
+        padding: 15px 25px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background-color 0.3s;
+      }
+
+      .content-link:hover {
+        background-color: #3a5a80;
+      }
+
+      /* Sobre */
+      #sobre {
+        background-color: white;
+      }
+
+      #sobre p {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      /* Conteúdos */
+      #conteudos {
+        background-color: #e8f1f8;
+      }
+
+      .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+      }
+
+      .card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 280px;
+        padding: 25px;
+        transition: transform 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      .card h3 {
+        color: #4a6fa5;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+
+      .card p {
+        margin-bottom: 20px;
+        color: #666;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: #4a6fa5;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 4px;
+        text-decoration: none;
+        text-align: center;
+        transition: background-color 0.3s;
+      }
+
+      .btn:hover {
+        background-color: #3a5a80;
+      }
+
+      /* Comunidade */
+      #comunidade {
+        background-color: white;
+        text-align: center;
+      }
+
+      .telegram-box {
+        background-color: #0088cc;
+        color: white;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .telegram-box h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+
+      .telegram-box p {
+        margin-bottom: 20px;
+      }
+
+      .telegram-btn {
+        display: inline-block;
+        background-color: white;
+        color: #0088cc;
+        padding: 12px 24px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s;
+      }
+
+      .telegram-btn:hover {
+        background-color: #e6f4ff;
+        transform: scale(1.05);
+      }
+
+      /* Rodapé */
+      footer {
+        background-color: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      /* Responsividade */
+      @media (max-width: 768px) {
+        .header-content {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        nav ul {
+          margin-top: 20px;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        nav ul li {
+          margin: 5px 0;
+        }
+
+        section {
+          padding: 40px 0;
+        }
+
+        .card {
+          width: 100%;
+          max-width: 350px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container header-content">
+        <div class="logo">AprendeDev</div>
+        <nav>
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#conteudos">Conteúdos</a></li>
+            <li><a href="#comunidade">Comunidade</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section id="inicio">
+      <div class="container">
+        <h2>Bem-vindo ao AprendeDev</h2>
+        <p>
+          Seu portal para aprender programação web de forma simples e direta.
+          Aqui você encontrará conteúdos básicos sobre desenvolvimento web,
+          desde os fundamentos até conceitos mais avançados.
+        </p>
+
+        <div class="content-links">
+          <a href="#conteudos" class="content-link">Explorar Conteúdos</a>
+          <a href="#comunidade" class="content-link">Junte-se à Comunidade</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="container">
+        <h2>Sobre o Projeto</h2>
+        <p>
+          O AprendeDev foi criado para ajudar iniciantes na jornada de
+          aprendizado de programação web. Nosso objetivo é fornecer materiais
+          claros e objetivos sobre HTML, CSS, JavaScript e conceitos
+          fundamentais de programação.
+        </p>
+        <p>
+          Este projeto é voltado para estudantes, pessoas em transição de
+          carreira ou qualquer interessado em começar no mundo do
+          desenvolvimento web.
+        </p>
+      </div>
+    </section>
+
+    <section id="conteudos">
+      <div class="container">
+        <h2>Conteúdos Disponíveis</h2>
+        <div class="cards-container">
+          <div class="card">
+            <h3>Introdução à Programação</h3>
+            <p>
+              Conceitos básicos e fundamentos da programação para quem está
+              começando do zero.
+            </p>
+            <a href="Intro.html" class="btn"
+              >Ver conteúdo</a
+            >
+          </div>
+
+          <div class="card">
+            <h3>Lógica de Programação</h3>
+            <p>
+              Aprenda a pensar como um programador e resolver problemas de forma
+              lógica.
+            </p>
+            <a href="Lógica.html" class="btn"
+              >Ver conteúdo</a
+            >
+          </div>
+
+          <div class="card">
+            <h3>HTML</h3>
+            <p>
+              A linguagem de marcação essencial para estruturar páginas web.
+            </p>
+            <a href="HTML.html" class="btn">Ver conteúdo</a>
+          </div>
+
+          <div class="card">
+            <h3>CSS</h3>
+            <p>
+              Estilize suas páginas web e aprenda a criar layouts modernos e
+              responsivos.
+            </p>
+            <a href="CSS.html" class="btn">Ver conteúdo</a>
+          </div>
+
+          <div class="card">
+            <h3>JavaScript</h3>
+            <p>
+              Adicione interatividade e dinamismo às suas páginas com a
+              linguagem da web.
+            </p>
+            <a href="JavaScript.html" class="btn"
+              >Ver conteúdo</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="comunidade">
+      <div class="container">
+        <h2>Junte-se à Nossa Comunidade</h2>
+        <div class="telegram-box">
+          <h3>Grupo no Telegram</h3>
+          <p>
+            Faça parte da nossa comunidade de aprendizes e desenvolvedores! Tire
+            dúvidas, compartilhe projetos e conecte-se com outras pessoas que
+            estão aprendendo programação.
+          </p>
+          <a href="https://t.me/aprendedev" class="telegram-btn" target="_blank"
+            >Entrar no Grupo</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>
+          &copy; 2023 AprendeDev - Desenvolvido por Luccas, estudante de Análise
+          e Desenvolvimento de Sistemas / Projeto de Extensão
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
